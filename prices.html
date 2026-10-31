@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEZ Quality Snacks · Prices (Page 3)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --navy: #1a2a4f; --navy-dark: #0f1a30; --navy-light: #2c3e6b;
+      --gold: #c9a84c; --gold-light: #e8d5a3; --gold-dark: #a8882e;
+      --chili-red: #d63447; --chili-orange: #f57c00; --chili-yellow: #ffb300; --chili-green: #2e7d32;
+      --cream: #faf8f5; --white: #ffffff;
+      --text-dark: #1a2a4f; --text-muted: #5a6a7e;
+      --shadow: 0 8px 24px rgba(26,42,79,0.12);
+      --radius: 16px; --transition: all 0.3s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background: var(--cream); color: var(--text-dark); line-height: 1.6; min-height: 100vh; animation: pageFade 0.6s ease; }
+    @keyframes pageFade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(214,52,71,0.5); } 70% { box-shadow: 0 0 0 14px rgba(214,52,71,0); } 100% { box-shadow: 0 0 0 0 rgba(214,52,71,0); } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    .navbar { background: var(--navy); padding: 0.9rem 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--chili-orange); }
+    .navbar .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--gold); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; text-decoration: none; }
+    .navbar .brand i { font-size: 1.6rem; animation: float 3s infinite; color: var(--chili-red); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; }
+    .nav-links a { color: var(--gold-light); text-decoration: none; padding: 0.5rem 1rem; border-radius: 30px; font-weight: 500; font-size: 0.9rem; transition: var(--transition); display: flex; align-items: center; gap: 0.35rem; }
+    .nav-links a i { font-size: 0.85rem; color: var(--gold); }
+    .nav-links a:hover, .nav-links a.active { background: var(--chili-red); color: var(--white); }
+    .nav-links a:hover i, .nav-links a.active i { color: var(--white); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; animation: slideUp 0.7s ease; }
+    .page-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: var(--radius); padding: 2.5rem; color: var(--white); margin-bottom: 2rem; box-shadow: var(--shadow); border-left: 8px solid var(--chili-yellow); }
+    .page-header h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .page-header h1 span { color: var(--chili-yellow); }
+    .page-header p { color: var(--gold-light); font-size: 1.1rem; }
+
+    .price-table { width: 100%; border-collapse: separate; border-spacing: 0 12px; margin: 1.5rem 0; }
+    .price-table th { background: var(--navy); color: var(--gold); font-weight: 700; padding: 1rem 1.4rem; text-align: left; font-size: 1rem; letter-spacing: 0.4px; }
+    .price-table th:first-child { border-radius: 14px 0 0 14px; }
+    .price-table th:last-child { border-radius: 0 14px 14px 0; }
+    .price-table td { background: var(--white); padding: 1rem 1.4rem; border-bottom: 1px solid rgba(214,52,71,0.15); font-weight: 500; transition: var(--transition); }
+    .price-table tr:hover td { background: #fff4e6; transform: scale(1.005); }
+    .price-table td:first-child { border-radius: 14px 0 0 14px; font-weight: 700; color: var(--navy); }
+    .price-table td:last-child { border-radius: 0 14px 14px 0; font-weight: 700; color: var(--chili-red); font-size: 1.1rem; }
+
+    .note-box { background: var(--white); border-left: 6px solid var(--chili-red); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .note-box p { margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.6rem; }
+    .note-box p i { color: var(--chili-red); margin-top: 0.2rem; }
+    .note-box p:last-child { margin-bottom: 0; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--chili-red); color: var(--white); padding: 0.8rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: var(--transition); border: none; cursor: pointer; box-shadow: 0 6px 16px rgba(214,52,71,0.4); font-size: 1rem; }
+    .btn:hover { background: var(--chili-orange); transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 24px rgba(245,124,0,0.5); }
+
+    .footer { background: var(--navy-dark); color: var(--gold-light); text-align: center; padding: 1.8rem; margin-top: 3rem; font-size: 0.9rem; border-top: 3px solid var(--chili-red); }
+    .footer i { color: var(--chili-red); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand"><i class="fas fa-pepper-hot"></i> PEZ QUALITY SNACKS</a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-house"></i>Home</a></li>
+      <li><a href="products.html"><i class="fas fa-cubes"></i>Products</a></li>
+      <li><a href="prices.html" class="active"><i class="fas fa-tag"></i>Prices</a></li>
+      <li><a href="vacancy.html"><i class="fas fa-briefcase"></i>Vacancy</a></li>
+      <li><a href="gallery.html"><i class="fas fa-images"></i>Gallery</a></li>
+      <li><a href="vision.html"><i class="fas fa-eye"></i>Vision</a></li>
+      <li><a href="mission.html"><i class="fas fa-flag"></i>Mission</a></li>
+      <li><a href="contact.html"><i class="fas fa-address-card"></i>Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1><i class="fas fa-tag" style="color: var(--chili-yellow); margin-right: 0.5rem;"></i>Price <span>per Product</span></h1>
+      <p>Transparent pricing for every item — quality snacks at affordable prices with a kick!</p>
+    </div>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>ITEMS</th>
+          <th>QUANTITY</th>
+          <th>SHILLINGS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="fas fa-candy-cane" style="color: var(--chili-red); margin-right: 8px;"></i> Daddies</td>
+          <td>Each</td>
+          <td>1,000 UGX</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-cookie" style="color: var(--chili-orange); margin-right: 8px;"></i> Cookies</td>
+          <td>Each</td>
+          <td>1,500 UGX</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-birthday-cake" style="color: var(--chili-yellow); margin-right: 8px;"></i> Cakes</td>
+          <td>Each</td>
+          <td>2,000 UGX</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <p><i class="fas fa-circle-info"></i> <span>If you buy daddies, you are at a risk of losing (but we guarantee freshness!).</span></p>
+      <p><i class="fas fa-circle-check"></i> <span>If you buy cookies, you are on a higher chance of winning.</span></p>
+      <p><i class="fas fa-trophy"></i> <span>If you buy cakes, you are on the highest chance of winning.</span></p>
+    </div>
+
+    <div style="text-align: center; margin: 2rem 0;">
+      <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&auto=format&fit=crop&q=60" alt="Snack pricing" style="width: 100%; max-width: 500px; border-radius: 20px; box-shadow: var(--shadow); transition: var(--transition);" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+
+    <div style="text-align: center; margin: 2rem 0;">
+      <a href="products.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Products</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <i class="fas fa-pepper-hot"></i> PEZ QUALITY SNACKS – crafted with love and chili in Uganda. <i class="fas fa-heart"></i>
+    <br>© 2025 · All rights reserved. · Page 3: prices.html
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('Prices page (prices.html) loaded');
+      document.querySelectorAll('.price-table tr').forEach((row, i) => {
+        row.style.opacity = '0';
+        row.style.transform = 'translateX(-20px)';
+        setTimeout(() => {
+          row.style.transition = 'all 0.4s ease';
+          row.style.opacity = '1';
+          row.style.transform = 'translateX(0)';
+        }, 100 * i);
+      });
+    });
+  </script>
+</body>
+</html>

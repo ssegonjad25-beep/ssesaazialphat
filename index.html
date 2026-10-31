@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEZ Quality Snacks · Home (Page 1)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --navy: #1a2a4f; --navy-dark: #0f1a30; --navy-light: #2c3e6b;
+      --gold: #c9a84c; --gold-light: #e8d5a3; --gold-dark: #a8882e;
+      --chili-red: #d63447; --chili-orange: #f57c00; --chili-yellow: #ffb300; --chili-green: #2e7d32;
+      --cream: #faf8f5; --white: #ffffff;
+      --text-dark: #1a2a4f; --text-muted: #5a6a7e;
+      --shadow: 0 8px 24px rgba(26,42,79,0.12);
+      --radius: 16px; --transition: all 0.3s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background: var(--cream); color: var(--text-dark); line-height: 1.6; min-height: 100vh; animation: pageFade 0.6s ease; }
+    @keyframes pageFade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(214,52,71,0.5); } 70% { box-shadow: 0 0 0 14px rgba(214,52,71,0); } 100% { box-shadow: 0 0 0 0 rgba(214,52,71,0); } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes chiliGlow { 0%,100% { box-shadow: 0 0 20px rgba(245,124,0,0.3); } 50% { box-shadow: 0 0 40px rgba(214,52,71,0.5); } }
+
+    .navbar { background: var(--navy); padding: 0.9rem 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--chili-orange); }
+    .navbar .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--gold); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; text-decoration: none; }
+    .navbar .brand i { font-size: 1.6rem; animation: float 3s infinite; color: var(--chili-red); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; }
+    .nav-links a { color: var(--gold-light); text-decoration: none; padding: 0.5rem 1rem; border-radius: 30px; font-weight: 500; font-size: 0.9rem; transition: var(--transition); display: flex; align-items: center; gap: 0.35rem; }
+    .nav-links a i { font-size: 0.85rem; color: var(--gold); }
+    .nav-links a:hover, .nav-links a.active { background: var(--chili-red); color: var(--white); }
+    .nav-links a:hover i, .nav-links a.active i { color: var(--white); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; animation: slideUp 0.7s ease; }
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: var(--radius); padding: 3rem 2.5rem; color: var(--white); box-shadow: var(--shadow); position: relative; overflow: hidden; animation: chiliGlow 4s infinite; }
+    .hero::after { content: '\f564'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; right: -20px; bottom: -30px; font-size: 10rem; color: rgba(245,124,0,0.15); transform: rotate(-12deg); }
+    .hero h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 0.8rem; letter-spacing: -1px; }
+    .hero h1 span { color: var(--chili-yellow); }
+    .hero p { font-size: 1.15rem; color: var(--gold-light); max-width: 650px; margin-bottom: 1.5rem; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--chili-red); color: var(--white); padding: 0.8rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: var(--transition); border: none; cursor: pointer; box-shadow: 0 6px 16px rgba(214,52,71,0.4); font-size: 1rem; }
+    .btn:hover { background: var(--chili-orange); transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 24px rgba(245,124,0,0.5); }
+    .btn-outline { background: transparent; border: 2px solid var(--chili-yellow); color: var(--chili-yellow); box-shadow: none; }
+    .btn-outline:hover { background: var(--chili-yellow); color: var(--navy); }
+
+    .section-title { display: flex; align-items: center; gap: 0.8rem; margin: 2.5rem 0 1.5rem; font-size: 1.8rem; font-weight: 800; color: var(--navy); }
+    .section-title i { background: var(--chili-red); color: var(--white); width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.3rem; }
+
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+    .card { background: var(--white); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow); transition: var(--transition); border-top: 5px solid var(--chili-orange); }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(214,52,71,0.2); border-top-color: var(--chili-red); }
+    .card i { font-size: 2rem; color: var(--chili-red); margin-bottom: 1rem; }
+    .card:nth-child(2) i { color: var(--chili-orange); }
+    .card:nth-child(3) i { color: var(--chili-green); }
+    .card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; color: var(--navy); }
+    .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+    .flavor-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--chili-yellow); color: var(--navy); padding: 0.4rem 1.2rem; border-radius: 30px; font-weight: 700; font-size: 0.85rem; margin: 0.3rem; }
+
+    .footer { background: var(--navy-dark); color: var(--gold-light); text-align: center; padding: 1.8rem; margin-top: 3rem; font-size: 0.9rem; border-top: 3px solid var(--chili-red); }
+    .footer i { color: var(--chili-red); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand"><i class="fas fa-pepper-hot"></i> PEZ QUALITY SNACKS</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active"><i class="fas fa-house"></i>Home</a></li>
+      <li><a href="products.html"><i class="fas fa-cubes"></i>Products</a></li>
+      <li><a href="prices.html"><i class="fas fa-tag"></i>Prices</a></li>
+      <li><a href="vacancy.html"><i class="fas fa-briefcase"></i>Vacancy</a></li>
+      <li><a href="gallery.html"><i class="fas fa-images"></i>Gallery</a></li>
+      <li><a href="vision.html"><i class="fas fa-eye"></i>Vision</a></li>
+      <li><a href="mission.html"><i class="fas fa-flag"></i>Mission</a></li>
+      <li><a href="contact.html"><i class="fas fa-address-card"></i>Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Welcome to <span>PEZ Quality Snacks</span></h1>
+      <p>We are glad to have you at PEZ QUALITY SNACKS. We offer different kinds of services and the finest snacks in Mukono, crafted with love and premium ingredients — with a kick of flavor!</p>
+      <a href="products.html" class="btn"><i class="fas fa-arrow-right"></i> Explore Products</a>
+      <a href="contact.html" class="btn btn-outline" style="margin-left: 0.8rem;"><i class="fas fa-phone"></i> Contact Us</a>
+    </section>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 2rem 0;">
+      <span class="flavor-badge"><i class="fas fa-pepper-hot"></i> Spicy Chili</span>
+      <span class="flavor-badge"><i class="fas fa-fire"></i> Fiery Hot</span>
+      <span class="flavor-badge"><i class="fas fa-lemon"></i> Tangy Citrus</span>
+      <span class="flavor-badge"><i class="fas fa-cookie"></i> Sweet & Savory</span>
+    </div>
+
+    <h2 class="section-title"><i class="fas fa-star"></i> Why Choose Us</h2>
+    <div class="card-grid">
+      <div class="card">
+        <i class="fas fa-medal"></i>
+        <h3>Premium Quality</h3>
+        <p>Every snack is made with the finest ingredients, ensuring a taste you can trust.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>Made with Love</h3>
+        <p>Our snacks are crafted with care, bringing joy to every bite and every customer.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-truck-fast"></i>
+        <h3>Fast Delivery</h3>
+        <p>We deliver fresh snacks right to your doorstep across Mukono and beyond.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin: 2.5rem 0;">
+      <div style="display: inline-block; background: var(--chili-red); color: var(--white); padding: 1rem 2.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; animation: pulse 2.5s infinite;">
+        <i class="fas fa-pepper-hot"></i> SHOPPING MALL · FRESH DAILY · SPICY FLAVORS <i class="fas fa-pepper-hot"></i>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin: 2rem 0;">
+      <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&auto=format&fit=crop&q=60" alt="Snacks" style="width: 100%; max-width: 600px; border-radius: 20px; box-shadow: var(--shadow); transition: var(--transition);" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+  </main>
+
+  <footer class="footer">
+    <i class="fas fa-pepper-hot"></i> PEZ QUALITY SNACKS – crafted with love and chili in Uganda. <i class="fas fa-heart"></i>
+    <br>© 2025 · All rights reserved. · Page 1: index.html
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('PEZ Home page (index.html) loaded');
+      const badges = document.querySelectorAll('.flavor-badge');
+      badges.forEach((b, i) => {
+        b.style.opacity = '0';
+        b.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+          b.style.transition = 'all 0.5s ease';
+          b.style.opacity = '1';
+          b.style.transform = 'translateY(0)';
+        }, 150 * i);
+      });
+    });
+  </script>
+</body>
+</html>

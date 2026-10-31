@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEZ Quality Snacks · Products (Page 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --navy: #1a2a4f; --navy-dark: #0f1a30; --navy-light: #2c3e6b;
+      --gold: #c9a84c; --gold-light: #e8d5a3; --gold-dark: #a8882e;
+      --chili-red: #d63447; --chili-orange: #f57c00; --chili-yellow: #ffb300; --chili-green: #2e7d32;
+      --cream: #faf8f5; --white: #ffffff;
+      --text-dark: #1a2a4f; --text-muted: #5a6a7e;
+      --shadow: 0 8px 24px rgba(26,42,79,0.12);
+      --radius: 16px; --transition: all 0.3s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background: var(--cream); color: var(--text-dark); line-height: 1.6; min-height: 100vh; animation: pageFade 0.6s ease; }
+    @keyframes pageFade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(214,52,71,0.5); } 70% { box-shadow: 0 0 0 14px rgba(214,52,71,0); } 100% { box-shadow: 0 0 0 0 rgba(214,52,71,0); } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    .navbar { background: var(--navy); padding: 0.9rem 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--chili-orange); }
+    .navbar .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--gold); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; text-decoration: none; }
+    .navbar .brand i { font-size: 1.6rem; animation: float 3s infinite; color: var(--chili-red); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; }
+    .nav-links a { color: var(--gold-light); text-decoration: none; padding: 0.5rem 1rem; border-radius: 30px; font-weight: 500; font-size: 0.9rem; transition: var(--transition); display: flex; align-items: center; gap: 0.35rem; }
+    .nav-links a i { font-size: 0.85rem; color: var(--gold); }
+    .nav-links a:hover, .nav-links a.active { background: var(--chili-red); color: var(--white); }
+    .nav-links a:hover i, .nav-links a.active i { color: var(--white); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; animation: slideUp 0.7s ease; }
+    .page-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: var(--radius); padding: 2.5rem; color: var(--white); margin-bottom: 2rem; box-shadow: var(--shadow); border-left: 8px solid var(--chili-red); }
+    .page-header h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .page-header h1 span { color: var(--chili-yellow); }
+    .page-header p { color: var(--gold-light); font-size: 1.1rem; }
+
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; margin: 2rem 0; }
+    .product-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); border-bottom: 5px solid var(--chili-orange); }
+    .product-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 20px 36px rgba(214,52,71,0.25); border-bottom-color: var(--chili-red); }
+    .product-img { height: 180px; background: var(--navy-light); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+    .product-card:hover .product-img img { transform: scale(1.08); }
+    .product-info { padding: 1.5rem; }
+    .product-info h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--navy); display: flex; align-items: center; gap: 0.5rem; }
+    .product-info h3 i { color: var(--chili-red); }
+    .product-info p { color: var(--text-muted); font-size: 0.95rem; }
+    .flavor-tag { display: inline-block; background: var(--chili-yellow); color: var(--navy); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-top: 0.6rem; }
+
+    .marquee-banner { background: var(--chili-red); color: var(--white); padding: 1rem 2rem; border-radius: 50px; text-align: center; font-weight: 700; letter-spacing: 1px; margin: 2rem 0; animation: pulse 2.5s infinite; text-transform: uppercase; font-size: 0.95rem; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--chili-orange); color: var(--white); padding: 0.8rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: var(--transition); border: none; cursor: pointer; box-shadow: 0 6px 16px rgba(245,124,0,0.4); font-size: 1rem; }
+    .btn:hover { background: var(--chili-red); transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 24px rgba(214,52,71,0.5); }
+
+    .footer { background: var(--navy-dark); color: var(--gold-light); text-align: center; padding: 1.8rem; margin-top: 3rem; font-size: 0.9rem; border-top: 3px solid var(--chili-red); }
+    .footer i { color: var(--chili-red); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand"><i class="fas fa-pepper-hot"></i> PEZ QUALITY SNACKS</a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-house"></i>Home</a></li>
+      <li><a href="products.html" class="active"><i class="fas fa-cubes"></i>Products</a></li>
+      <li><a href="prices.html"><i class="fas fa-tag"></i>Prices</a></li>
+      <li><a href="vacancy.html"><i class="fas fa-briefcase"></i>Vacancy</a></li>
+      <li><a href="gallery.html"><i class="fas fa-images"></i>Gallery</a></li>
+      <li><a href="vision.html"><i class="fas fa-eye"></i>Vision</a></li>
+      <li><a href="mission.html"><i class="fas fa-flag"></i>Mission</a></li>
+      <li><a href="contact.html"><i class="fas fa-address-card"></i>Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1><i class="fas fa-cubes" style="color: var(--chili-yellow); margin-right: 0.5rem;"></i>Our <span>Products</span></h1>
+      <p>We offer high quality snacks made from the finest ingredients — each bite is a delight with a kick of flavor!</p>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&auto=format&fit=crop&q=60" alt="Daddies snacks">
+        </div>
+        <div class="product-info">
+          <h3><i class="fas fa-candy-cane"></i> Daddies</h3>
+          <p>Crunchy, golden, and perfectly seasoned — the classic snack you grew up loving.</p>
+          <span class="flavor-tag"><i class="fas fa-pepper-hot"></i> Spicy Chili</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=500&auto=format&fit=crop&q=60" alt="Cookies">
+        </div>
+        <div class="product-info">
+          <h3><i class="fas fa-cookie"></i> Cookies</h3>
+          <p>Rich chocolate chip and butter cookies, baked to golden perfection every morning.</p>
+          <span class="flavor-tag" style="background: var(--chili-orange); color: white;"><i class="fas fa-fire"></i> Fiery Hot</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=500&auto=format&fit=crop&q=60" alt="Biscuits">
+        </div>
+        <div class="product-info">
+          <h3><i class="fas fa-cookie-bite"></i> Biscuits</h3>
+          <p>Light, crispy, and satisfying — perfect for tea time or a quick snack break.</p>
+          <span class="flavor-tag" style="background: var(--chili-green); color: white;"><i class="fas fa-lemon"></i> Tangy Citrus</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=60" alt="Cakes">
+        </div>
+        <div class="product-info">
+          <h3><i class="fas fa-birthday-cake"></i> Cakes</h3>
+          <p>Moist, flavorful cakes for every celebration — birthdays, weddings, and more.</p>
+          <span class="flavor-tag" style="background: var(--chili-yellow); color: var(--navy);"><i class="fas fa-cookie"></i> Sweet & Savory</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee-banner">
+      <i class="fas fa-pepper-hot"></i> SHOPPING MALL · FRESH DAILY · SPICY FLAVORS <i class="fas fa-pepper-hot"></i>
+    </div>
+
+    <div style="text-align: center; margin: 2rem 0;">
+      <a href="prices.html" class="btn"><i class="fas fa-tag"></i> View Prices</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <i class="fas fa-pepper-hot"></i> PEZ QUALITY SNACKS – crafted with love and chili in Uganda. <i class="fas fa-heart"></i>
+    <br>© 2025 · All rights reserved. · Page 2: products.html
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('Products page (products.html) loaded');
+      document.querySelectorAll('.product-card').forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.transition = 'all 0.6s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 100 * i);
+      });
+    });
+  </script>
+</body>
+</html>

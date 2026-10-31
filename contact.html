@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEZ Quality Snacks · Contact (Page 8)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --navy: #1a2a4f; --navy-dark: #0f1a30; --navy-light: #2c3e6b;
+      --gold: #c9a84c; --gold-light: #e8d5a3; --gold-dark: #a8882e;
+      --chili-red: #d63447; --chili-orange: #f57c00; --chili-yellow: #ffb300; --chili-green: #2e7d32;
+      --cream: #faf8f5; --white: #ffffff;
+      --text-dark: #1a2a4f; --text-muted: #5a6a7e;
+      --shadow: 0 8px 24px rgba(26,42,79,0.12);
+      --radius: 16px; --transition: all 0.3s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background: var(--cream); color: var(--text-dark); line-height: 1.6; min-height: 100vh; animation: pageFade 0.6s ease; }
+    @keyframes pageFade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(214,52,71,0.5); } 70% { box-shadow: 0 0 0 14px rgba(214,52,71,0); } 100% { box-shadow: 0 0 0 0 rgba(214,52,71,0); } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    .navbar { background: var(--navy); padding: 0.9rem 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--chili-orange); }
+    .navbar .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--gold); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; text-decoration: none; }
+    .navbar .brand i { font-size: 1.6rem; animation: float 3s infinite; color: var(--chili-red); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; }
+    .nav-links a { color: var(--gold-light); text-decoration: none; padding: 0.5rem 1rem; border-radius: 30px; font-weight: 500; font-size: 0.9rem; transition: var(--transition); display: flex; align-items: center; gap: 0.35rem; }
+    .nav-links a i { font-size: 0.85rem; color: var(--gold); }
+    .nav-links a:hover, .nav-links a.active { background: var(--chili-red); color: var(--white); }
+    .nav-links a:hover i, .nav-links a.active i { color: var(--white); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; animation: slideUp 0.7s ease; }
+    .page-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: var(--radius); padding: 2.5rem; color: var(--white); margin-bottom: 2rem; box-shadow: var(--shadow); border-left: 8px solid var(--chili-red); }
+    .page-header h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .page-header h1 span { color: var(--chili-yellow); }
+    .page-header p { color: var(--gold-light); font-size: 1.1rem; }
+
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .contact-card { background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); text-align: center; transition: var(--transition); border-bottom: 5px solid var(--chili-orange); }
+    .contact-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(214,52,71,0.2); border-bottom-color: var(--chili-red); }
+    .contact-card i { font-size: 2.5rem; color: var(--chili-red); margin-bottom: 1rem; }
+    .contact-card h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .contact-card p { color: var(--text-muted); font-size: 1rem; }
+
+    .contact-cta { background: var(--navy); border-radius: var(--radius); padding: 2.5rem; text-align: center; margin: 2rem 0; box-shadow: var(--shadow); }
+    .contact-cta h2 { color: var(--chili-yellow); font-size: 1.8rem; margin-bottom: 1rem; }
+    .contact-cta p { color: var(--gold-light); margin-bottom: 1.5rem; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--chili-red); color: var(--white); padding: 0.8rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: var(--transition); border: none; cursor: pointer; box-shadow: 0 6px 16px rgba(214,52,71,0.4); font-size: 1rem; }
+    .btn:hover { background: var(--chili-orange); transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 24px rgba(245,124,0,0.5); }
+    .btn-outline { background: transparent; border: 2px solid var(--chili-yellow); color: var(--chili-yellow); box-shadow: none; }
+    .btn-outline:hover { background: var(--chili-yellow); color: var(--navy); }
+
+    .footer { background: var(--navy-dark); color: var(--gold-light); text-align: center; padding: 1.8rem; margin-top: 3rem; font-size: 0.9rem; border-top: 3px solid var(--chili-red); }
+    .footer i { color: var(--chili-red); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand"><i class="fas fa-pepper-hot"></i> PEZ QUALITY SNACKS</a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-house"></i>Home</a></li>
+      <li><a href="products.html"><i class="fas fa-cubes"></i>Products</a></li>
+      <li><a href="prices.html"><i class="fas fa-tag"></i>Prices</a></li>
+      <li><a href="vacancy.html"><i class="fas fa-briefcase"></i>Vacancy</a></li>
+      <li><a href="gallery.html"><i class="fas fa-images"></i>Gallery</a></li>
+      <li><a href="vision.html"><i class="fas fa-eye"></i>Vision</a></li>
+      <li><a href="mission.html"><i class="fas fa-flag"></i>Mission</a></li>
+      <li><a href="contact.html" class="active"><i class="fas fa-address-card"></i>Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1><i class="fas fa-address-card" style="color: var(--chili-yellow); margin-right: 0.5rem;"></i>Contact <span>Us</span></h1>
+      <p>We'd love to hear from you — reach out with any questions or orders!</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-map-pin"></i>
+        <h3>Location</h3>
+        <p>Mukono district, opposite Total cars</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Address</h3>
+        <p>POX 123, Bwala village</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Phone</h3>
+        <p>0752345547</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-clock"></i>
+        <h3>Hours</h3>
+        <p>Mon–Sat: 8am – 7pm</p>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <h2><i class="fas fa-pepper-hot"></i> Ready to Taste the Heat?</h2>
+      <p>Call us or send a message — we'll get back to you as soon as possible.</p>
+      <a href="tel:0752345547" class="btn"><i class="fas fa-phone"></i> Call Now</a>
+      <a href="mailto:info@pezsnacks.ug" class="btn btn-outline" style="margin-left: 0.8rem;"><i class="fas fa-envelope"></i> Email Us</a>
+    </div>
+
+    <div style="text-align: center; margin: 2rem 0;">
+      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=500&auto=format&fit=crop&q=60" alt="Contact us" style="width: 100%; max-width: 500px; border-radius: 20px; box-shadow: var(--shadow); transition: var(--transition);" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+  </main>
+
+  <footer class="footer">
+    <i class="fas fa-pepper-hot"></i> PEZ QUALITY SNACKS – crafted with love and chili in Uganda. <i class="fas fa-heart"></i>
+    <br>© 2025 · All rights reserved. · Page 8: contact.html
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('Contact page (contact.html) loaded');
+      document.querySelectorAll('.contact-card').forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.transition = 'all 0.5s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 120 * i);
+      });
+    });
+  </script>
+</body>
+</html>
